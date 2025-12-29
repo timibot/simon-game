@@ -1,0 +1,128 @@
+:root {
+    --bg-color: #ffffff;   /* NYT Dark Mode Background */
+    --board-bg: #121213;
+    --text-color: #000000;
+    --border-color: #3a3a3c; /* Subtle gray borders */
+    --panel-dim: #3a3a3c;    /* Inactive panel color (Dark Gray) */
+    
+    /* Modern Pastel/Neon Colors for activation */
+    --red-active: #ff4d4d;
+    --blue-active: #4da6ff;
+    --green-active: #5cd65c;
+    --yellow-active: #ffe135;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Header & Controls */
+.controls {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 20px;
+    width: 100%;
+    max-width: 400px;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 32px;
+    letter-spacing: 1px;
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+}
+
+#status {
+    font-size: 14px;
+    color: #818384; /* NYT Gray text */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+    min-height: 20px;
+}
+
+/* Minimalist Buttons */
+.mode-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.mode-buttons button {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 12px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+}
+
+.mode-buttons button:hover, .mode-buttons button.selected {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    border-color: var(--text-color);
+}
+
+/* The Game Board */
+.game-board {
+    display: flex;
+    flex-wrap: wrap;
+    width: 320px;
+    height: 320px;
+    gap: 10px; /* Space between tiles */
+    padding: 10px;
+    transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1); /* Smooth rotation */
+}
+
+/* The Panels (Tiles) */
+.panel {
+    width: 145px;
+    height: 145px;
+    border: 2px solid var(--border-color);
+    cursor: pointer;
+    transition: background-color 0.1s, border-color 0.1s;
+    /* No rounded corners for true brutalist/minimalist look, 
+       or use 4px for slight softening */
+    border-radius: 4px; 
+}
+
+/* Active States - When lit up */
+.panel.active {
+    border-color: transparent;
+}
+
+/* Specific active colors override the gray background */
+.red { background-color: var(--red-active); box-shadow: 0 0 15px var(--red-active); }
+.blue { background-color: var(--blue-active); box-shadow: 0 0 15px var(--blue-active); }
+.green { background-color: var(--green-active); box-shadow: 0 0 15px var(--green-active); }
+.yellow { background-color: var(--yellow-active); box-shadow: 0 0 15px var(--yellow-active); }
+
+/* Optional: Slight hover effect for desktop playability */
+.panel:hover {
+    border-color: #ffffff;
+}
+
+footer {
+    margin-top: 50px;       /* Pushes it away from the game board */
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #818384;         /* Uses your "gray" text color */
+    border-top: 1px solid var(--border-color); /* Matches your header line */
+    width: 100%;
+    max-width: 400px;       /* Keeps it aligned with the game width */
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simon Game - Multi Mode</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="controls">
+        <h1>Simon Game</h1>
+        <p id="status">Select Mode to Start</p>
+        <div class="mode-buttons">
+            <button onclick="startGame('easy')">Easy</button>
+            <button onclick="startGame('medium')">Medium</button>
+            <button onclick="startGame('hard')">Hard</button>
+        </div>
+    </div>
+
+    <div class="game-board" id="board">
+        <div class="panel red" id="red" data-color="red"></div>
+        <div class="panel blue" id="blue" data-color="blue"></div>
+        <div class="panel green" id="green" data-color="green"></div>
+        <div class="panel yellow" id="yellow" data-color="yellow"></div>
+    </div>
+
+<footer>
+    <p>
+        &copy; Devbyte <span id="current-year"></span> Simon Game.
+    </p>
+</footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./game.js"></script>
+</body>
+</html>
