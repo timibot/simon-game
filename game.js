@@ -115,6 +115,7 @@ function rotateBoard() {
     // Rotates the board 90 degrees every level
     var rotation = level * 90; 
     $(".game-board").css("transform", "rotate(" + rotation + "deg)");
+    $(".game-board").css("transition", "transform 2s ease");
 }
 
 function shuffleBoard() {
